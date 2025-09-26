@@ -6,7 +6,7 @@ import Universe from "./Universe";
 
 function ProductPage() {
     return (
-        <diV>
+        <div>
             <Hero />
             <LeftSection
                 imgageURL="media/images/kite.png"
@@ -55,7 +55,7 @@ function ProductPage() {
                 <a href="#"> Zerodha.tech blog.</a>
             </p>
             <Universe />
-        </diV>
+        </div>
     );
 }
 
