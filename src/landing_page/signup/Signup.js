@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import "./Signup.css";
 import { handleError, handleSuccess } from "../../util";
+import { BACKEND_URL } from "../../config";
 
 function SignupPage() {
     const [signupInfo, setSignupInfo] = useState({
@@ -31,7 +32,7 @@ function SignupPage() {
             return;
         }
         try {
-            const url = "http://localhost:8080/auth/signup";
+            const url = `${BACKEND_URL}/auth/signup`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {

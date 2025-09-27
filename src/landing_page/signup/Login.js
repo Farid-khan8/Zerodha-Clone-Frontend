@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { handleError, handleSuccess } from "../../util.js";
 import { ToastContainer } from "react-toastify";
 import "./Signup.css";
+import { BACKEND_URL, DASHBOARD_URL } from "../../config";
 
 function LoginPage() {
     const [loginInfo, setLoginInfo] = useState({
@@ -26,7 +27,7 @@ function LoginPage() {
             return;
         }
         try {
-            const url = "http://localhost:8080/auth/login";
+            const url = `${BACKEND_URL}/auth/login`;
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
@@ -44,7 +45,7 @@ function LoginPage() {
 
                 // Redirect to the seperate dashboard app
                 setTimeout(() => {
-                    window.location.href = "http://localhost:3001"; // replace 3001 with your dashboard port
+                    window.location.href = DASHBOARD_URL;
                 }, 1000);
             } else {
                 handleError(message || "Invalid Credentials");
