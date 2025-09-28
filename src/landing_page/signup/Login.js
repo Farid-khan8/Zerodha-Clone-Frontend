@@ -161,8 +161,9 @@ function LoginPage() {
                 handleSuccess(message || "Login successful");
 
                 // Redirect to the separate dashboard app
+                // Pass token to dashboard via URL parameter
                 setTimeout(() => {
-                    window.location.href = DASHBOARD_URL;
+                    window.location.href = `${DASHBOARD_URL}?token=${jwtToken}&email=${userEmail}&name=${name}`;
                 }, 1000);
             } else {
                 handleError(message || "Invalid Credentials");
