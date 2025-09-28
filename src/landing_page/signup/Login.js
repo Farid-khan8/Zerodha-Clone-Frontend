@@ -121,16 +121,16 @@ function LoginPage() {
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        console.log("Form submitted"); // Add this line for debugging
+        // console.log("Form submitted"); // Add this line for debugging
         const { email, password } = loginInfo;
-        console.log("Login data:", { email, password }); // Add this line for debugging
+        // console.log("Login data:", { email, password }); // Add this line for debugging
 
         if (!email || !password) {
             handleError("Email and password are required");
             return;
         }
         try {
-            console.log("Making API call to:", `${BACKEND_URL}/auth/login`); // Add this line for debugging
+            // console.log("Making API call to:", `${BACKEND_URL}/auth/login`); // Add this line for debugging
             const url = `${BACKEND_URL}/auth/login`;
             const response = await fetch(url, {
                 method: "POST",
@@ -140,10 +140,10 @@ function LoginPage() {
                 body: JSON.stringify(loginInfo),
                 credentials: "include", // include cookies in the request
             });
-            console.log("Response received:", response.status); // Add this line for debugging
+            // console.log("Response received:", response.status); // Add this line for debugging
 
             const result = await response.json();
-            console.log("Result:", result); // Add this line for debugging
+            // console.log("Result:", result); // Add this line for debugging
             const {
                 success,
                 message,
